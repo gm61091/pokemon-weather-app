@@ -1,13 +1,11 @@
-//weclome for page
-//description of what it does
+//weclome for page $$
+//description of what it does $$
 //a couple of permanent images for landing page
-//search bar
+//search bar $$
 //result box for weather results
 //potential pokemon list based off weather result.
 //may add a database they can click and keep pokemon like the game 
 
-
-const pokemonList = document.getElementById('pokemonList')
 
 //function to call both apis
 async function getBoth() {
@@ -20,16 +18,46 @@ async function getBoth() {
 async function weatherFunction() {
 
     const weatherApi = '';
-    const city = 'atlanta';
+    const city = document.getElementById('city').value;
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApi}`;
 
     fetch(weatherUrl)
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+        //let weatherResult = document.createElement('ol');
+        // weatherResult.innerHTML = [
+        //     data.name,
+        //     data.weather.icon,
+        //     data.main.temp,
+        //     data.weather.main,
+        //     data.main.humidity,
+        //     data.weather.description,
+        //     data.wind.speed,
+        // ]
+        let weatherResult = document.createElement('ul');  //chats version
+        
+        function convertKelvin(kelvin) {
+            return (kelvin - 273.15) * 9/5 + 32;
+        }
+        weatherResult.innerHTML = `
+            <li>City: ${data.name}</li>
+            <li>Description: ${data.weather[0].description}</li>
+            <li>Temperature: ${data.main.temp} Kelvin</li>
+            <li>Temperature: ${convertKelvin(data.main.temp)} Degrees</li>
+            <li>Weather: ${data.weather[0].main}</li>
+            <li>Humidity: ${data.main.humidity} Percent</li>
+            <li>Wind Speed: ${data.wind.speed} MPH</li>
+        `;
+        weather.appendChild(weatherResult)
+        })
     .catch(error => console.error('Error:', error))};
 
 
-
+//pulling both pokemon apis
+async function bothPokemon() {
+    await pokemonFunction();
+    await pokemonImage();
+}
 //pokemon api call
 async function pokemonFunction() {
 
@@ -41,7 +69,33 @@ async function pokemonFunction() {
     .then(data => console.log(data))
     .catch(error => console.error('Error:', error))};
   
-    //   let title = document.createElement('h3')
-    //   title.innerText = data.articles[0].title
-    //   news.appendChild(title)
-    //   })
+
+//pokemon image api call
+
+async function pokemonImage() {
+
+    const pokemon = document.getElementById('pokemon').value;
+    const imageUrl = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+
+    fetch(imageUrl)
+    .then(response => response.json())
+    .then(data => {
+
+        // const pokemonSprite = data.sprites.front_default;
+        // const imgElement = document.getElementById('pokemonSprite')
+
+        console.log(data)
+
+        let pokemonResult = document.createElement('ul');
+        pokemonResult.innerHTML = `
+        <li>Pokemon: ${data.name}</li>
+        <li>ID: ${data.id}</li>
+        <li>Type: ${data.types.type.name}</li>
+    `;
+        let imgElement = document.createElement('img')
+        imgElement.setAttribute('src', data.sprites.front_default)
+        pokemonResult.appendChild(imgElement)
+        pokemon.appendChild(pokemonResult)
+    })
+    .catch(error => console.error('Error:', error))};
+
