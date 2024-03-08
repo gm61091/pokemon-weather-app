@@ -17,7 +17,7 @@ async function getBoth() {
 //weathercapi call
 async function weatherFunction() {
 
-    const weatherApi = '885df44cffe885e5718d2bd8f918b530';
+    const weatherApi = '';
     const city = document.getElementById('city').value;
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApi}`;
 
@@ -75,6 +75,7 @@ async function pokemonFunction() {
 async function pokemonImage() {
 
     const pokemon = document.getElementById('pokemon');
+    const pokemon2= document.getElementById('pokemon2');
     const pokemonValue = pokemon.value;
     const imageUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonValue}`;
     let pokemonResult = document.createElement('ul');
@@ -94,13 +95,9 @@ async function pokemonImage() {
         <li>ID: ${data.id}</li>
         <li>Type: ${data.types[0].type.name}</li>
         `;
-        // let imgElement = document.getElementById('pokemonSprite')
-        // imgElement.setAttribute('src', data.sprites.front_default)
-        // pokemonResult.appendChild(imgElement)
-        console.log(data.name)
-        console.log(data.id)
-        console.log(data.types[0].type.name)
-        pokemon.appendChild(pokemonResult)
+        let imgElement = document.getElementById('pokemonSprite')
+        imgElement.setAttribute('src', data.sprites.front_default)
+        pokemon2.appendChild(pokemonResult)
     })
     .catch(error => console.error('Error:', error))};
 
