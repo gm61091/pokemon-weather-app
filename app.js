@@ -19,7 +19,7 @@ async function getBoth() {
 //weathercapi call
 async function weatherFunction() {
 
-    const weatherApi = '885df44cffe885e5718d2bd8f918b530';
+    const weatherApi = '';
     const city = 'atlanta';
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApi}`;
 
