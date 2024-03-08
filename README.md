@@ -17,7 +17,7 @@ The Pokémon Weather App is a web application that utilizes both the Pokémon AP
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/ygm61091/pokemon-weather-app.git`
+1. Clone the repository: `git clone https://github.com/gm61091/pokemon-weather-app.git`
 2. Navigate to the project directory: `cd pokemon-weather-app`
 3. Install dependencies: `npm install` or `yarn install`
 

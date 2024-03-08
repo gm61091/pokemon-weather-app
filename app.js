@@ -61,7 +61,7 @@ async function bothPokemon() {
 //pokemon api call
 async function pokemonFunction() {
 
-    const pokemonType = 'fire';
+    const pokemonType = 'water';
     const pokemonUrl = `https://pokeapi.co/api/v2/type/${pokemonType}`;
 
     fetch(pokemonUrl)
@@ -74,8 +74,10 @@ async function pokemonFunction() {
 
 async function pokemonImage() {
 
-    const pokemon = document.getElementById('pokemon').value;
-    const imageUrl = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+    const pokemon = document.getElementById('pokemon');
+    const pokemonValue = pokemon.value;
+    const imageUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonValue}`;
+    let pokemonResult = document.createElement('ul');
 
     fetch(imageUrl)
     .then(response => response.json())
@@ -86,15 +88,18 @@ async function pokemonImage() {
 
         console.log(data)
 
-        let pokemonResult = document.createElement('ul');
+        
         pokemonResult.innerHTML = `
         <li>Pokemon: ${data.name}</li>
         <li>ID: ${data.id}</li>
-        <li>Type: ${data.types.type.name}</li>
-    `;
-        let imgElement = document.createElement('img')
-        imgElement.setAttribute('src', data.sprites.front_default)
-        pokemonResult.appendChild(imgElement)
+        <li>Type: ${data.types[0].type.name}</li>
+        `;
+        // let imgElement = document.getElementById('pokemonSprite')
+        // imgElement.setAttribute('src', data.sprites.front_default)
+        // pokemonResult.appendChild(imgElement)
+        console.log(data.name)
+        console.log(data.id)
+        console.log(data.types[0].type.name)
         pokemon.appendChild(pokemonResult)
     })
     .catch(error => console.error('Error:', error))};
