@@ -1,10 +1,10 @@
-//weclome for page $$
-//description of what it does $$
-//a couple of permanent images for landing page
-//search bar $$
-//result box for weather results
-//potential pokemon list based off weather result.
-//may add a database they can click and keep pokemon like the game 
+weclome for page $$
+description of what it does $$
+a couple of permanent images for landing page
+search bar $$
+result box for weather results
+potential pokemon list based off weather result.
+may add a database they can click and keep pokemon like the game 
 
 
 //function to call both apis
