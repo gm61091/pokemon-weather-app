@@ -35,6 +35,9 @@
     //ice
 //]
 
+//function for time
+// if day ? bug && ground
+// if night ? ghost && psychic
 
 // function for tempuratre
 //if temp < 30 ? ice && fairy
@@ -106,12 +109,10 @@ async function weatherFunction() {
             <li>Description: ${data.weather[0].description}</li>
             <li>Temperature: ${convertKelvin(data.main.temp)} Degrees</li>
             <li>Weather: ${data.weather[0].main}</li>
-            <li>Icon: ${data.weather[0].icon}</li>
             <li>Time: ${data.dt}</li>
-            <li>Rain: ${data.rain}</li>
-            <li>Humidity: ${data.main.humidity} Percent</li>
+            <li>Humidity: ${data.main.humidity} %</li>
             <li>Wind Speed: ${data.wind.speed} MPH</li>
-            <li>Clouds ${data.clouds.all} percent cloud coverage</li>
+            <li>Clouds ${data.clouds.all} % coverage</li>
         `;
         weather.appendChild(weatherResult)
         })
