@@ -26,7 +26,7 @@ const data = await weatherApiCall();
 
 
 async function weatherApiCall() {
-    const weatherApi = '885df44cffe885e5718d2bd8f918b530';
+    const weatherApi = '';
     const city                = document.getElementById('city').value;
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApi}`;
 
@@ -79,7 +79,7 @@ async function weatherTemp() {
     }
     else if (temperature > 50 && temperature <= 75) {
 
-        await pokemonType('ground')
+        await pokemonType('bug')
 
 
 
@@ -344,7 +344,7 @@ async function pokemonType(typeOfPokemon) {
 
     const response     = await fetch(`https://pokeapi.co/api/v2/type/${typeOfPokemon}`);
     const data         = await response.json();
-    console.log(data)
+    //console.log(data)
     const randomPokemon = Math.floor(Math.random() * 25);
     let pokemon2 = document.getElementById('pokemon2')
     let pokemonDataUrl = await data.pokemon[randomPokemon].pokemon.url 
