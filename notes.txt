@@ -90,3 +90,14 @@ pokemonDataUrl.sprites[0].front_default
 pokemonDataUrl.sprites.other.home.front_default
 pokemonDataUrl.sprites.other.official_artwork.front_default
 pokemonDataUrl.sprites.other.showdown.front_default
+
+welcome header with a few pokemon images
+description of what site does
+a search bar with please enter city
+3 result boxes 
+1 for the city name of results
+1 for the weather results
+1 for potential pokemon
+
+pokemon will show image name and id
+
