@@ -1,3 +1,35 @@
+//weathercapi call
+async function weatherFunction() {
+
+    const weatherApi = '885df44cffe885e5718d2bd8f918b530';
+    const city = document.getElementById('city').value;
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApi}`;
+
+    fetch(weatherUrl)
+    .then(response => response.json())
+    .then(data => {
+        
+        console.log(data)
+
+        let weatherResult = document.createElement('ul'); 
+        
+        function convertKelvin(kelvin) {
+            return Math.floor(kelvin - 273.15) * 9/5 + 32;
+        }
+        weatherResult.innerHTML = `
+            <li>City: ${data.name}</li>
+            <li>Description: ${data.weather[0].description}</li>
+            <li>Temperature: ${convertKelvin(data.main.temp)} Degrees</li>
+            <li>Weather: ${data.weather[0].main}</li>
+            <li>Time: ${data.dt}</li>
+            <li>Humidity: ${data.main.humidity} %</li>
+            <li>Wind Speed: ${data.wind.speed} MPH</li>
+            <li>Clouds ${data.clouds.all} % coverage</li>
+        `;
+        weather.appendChild(weatherResult)
+        })
+    
+    .catch(error => console.error('Error:', error))};
 
 
 async function weatherApiCall() {
@@ -10,6 +42,17 @@ async function weatherApiCall() {
 
     return data;
 }
+
+//function to call both apis
+async function getAll() {
+    await weatherFunction();
+    await weatherMain();
+    await weatherHumidity();
+    await weatherWind();
+    await weatherClouds();
+    await weatherTemp();
+}
+
 
 
 
@@ -387,50 +430,6 @@ async function weatherMain() {
 
 }
 
-
-//function to call both apis
-async function getBoth() {
-    await weatherFunction();
-    await weatherMain();
-    await weatherHumidity();
-    await weatherWind();
-    await weatherClouds();
-    await weatherTemp();
-}
-
-
-//weathercapi call
-async function weatherFunction() {
-
-    const weatherApi = '885df44cffe885e5718d2bd8f918b530';
-    const city = document.getElementById('city').value;
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApi}`;
-
-    fetch(weatherUrl)
-    .then(response => response.json())
-    .then(data => {
-        
-        console.log(data)
-
-        let weatherResult = document.createElement('ul'); 
-        
-        function convertKelvin(kelvin) {
-            return Math.floor(kelvin - 273.15) * 9/5 + 32;
-        }
-        weatherResult.innerHTML = `
-            <li>City: ${data.name}</li>
-            <li>Description: ${data.weather[0].description}</li>
-            <li>Temperature: ${convertKelvin(data.main.temp)} Degrees</li>
-            <li>Weather: ${data.weather[0].main}</li>
-            <li>Time: ${data.dt}</li>
-            <li>Humidity: ${data.main.humidity} %</li>
-            <li>Wind Speed: ${data.wind.speed} MPH</li>
-            <li>Clouds ${data.clouds.all} % coverage</li>
-        `;
-        weather.appendChild(weatherResult)
-        })
-    
-    .catch(error => console.error('Error:', error))};
 
 
 //pulling both pokemon apis
