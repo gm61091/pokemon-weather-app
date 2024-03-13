@@ -11,9 +11,127 @@ async function weatherApiCall() {
     return data;
 }
 
-async function weatherHumidity() {
+
+
+
+async function weatherTemp() {
+    
+    const weatherData = await weatherApiCall();
+
+    function convertKelvin(kelvin) {
+        return Math.floor(kelvin - 273.15) * 9/5 + 32;
+    }
+    const temperature = convertKelvin(weatherData.main.temp);
+
+    console.log(weatherData);
+    
+
+    if (temperature < 0 && temperature <= 25) {
+
+        
+
+        const pokemonData = await pokemonType('ice')
+
+        let pTag = document.createElement('p')
+        pTag.innerText = pokemonData.pokemon[0].pokemon.name
+        let weather3 = document.getElementById('weather3')
+        weather3.appendChild(pTag)
+
+    }
+    else if (temperature > 25 && temperature <= 50) {
+
+        const pokemonData = await pokemonType('bug')
+
+        let pTag = document.createElement('p')
+        pTag.innerText = pokemonData.pokemon[0].pokemon.name
+        let weather3 = document.getElementById('weather3')
+        weather3.appendChild(pTag)
+
+    }
+    else if (temperature > 50 && temperature <= 75) {
+
+        const pokemonData = await pokemonType('ground')
+
+        let pTag = document.createElement('p')
+        pTag.innerText = pokemonData.pokemon[0].pokemon.name
+        let weather3 = document.getElementById('weather3')
+        weather3.appendChild(pTag)
+
+    }
+    else if (temperature > 75 && temperature <= 100) {
+
+        const pokemonData = await pokemonType('bug')
+
+        let pTag = document.createElement('p')
+        pTag.innerText = pokemonData.pokemon[0].pokemon.name
+        let weather3 = document.getElementById('weather3')
+        weather3.appendChild(pTag)
+    }
+    else if (temperature > 100) {
+
+        const pokemonData = await pokemonType('fire')
+
+        let pTag = document.createElement('p')
+        pTag.innerText = pokemonData.pokemon[0].pokemon.name
+        let weather3 = document.getElementById('weather3')
+        weather3.appendChild(pTag)
+    }
+
+
+
+}
+
+async function weatherClouds() {
     const weatherData = await weatherApiCall();
     console.log(weatherData)
+    const cloudPercent = await weatherData.clouds.all;
+
+    if (cloudPercent >= 0 && cloudPercent <= 25) {
+
+        const pokemonData = await pokemonType('grass')
+
+        let pTag = document.createElement('p')
+        pTag.innerText = pokemonData.pokemon[0].pokemon.name
+        let weather3 = document.getElementById('weather3')
+        weather3.appendChild(pTag)
+
+    }
+    else if (cloudPercent > 25 && cloudPercent <= 50) {
+
+        const pokemonData = await pokemonType('bug')
+
+        let pTag = document.createElement('p')
+        pTag.innerText = pokemonData.pokemon[0].pokemon.name
+        let weather3 = document.getElementById('weather3')
+        weather3.appendChild(pTag)
+
+    }
+    else if (cloudPercent > 50 && cloudPercent <= 75) {
+
+        const pokemonData = await pokemonType('flying')
+
+        let pTag = document.createElement('p')
+        pTag.innerText = pokemonData.pokemon[0].pokemon.name
+        let weather3 = document.getElementById('weather3')
+        weather3.appendChild(pTag)
+
+    }
+    else if (cloudPercent > 75 && cloudPercent <= 100) {
+
+        const pokemonData = await pokemonType('water')
+
+        let pTag = document.createElement('p')
+        pTag.innerText = pokemonData.pokemon[0].pokemon.name
+        let weather3 = document.getElementById('weather3')
+        weather3.appendChild(pTag)
+    }
+
+
+
+}
+
+async function weatherHumidity() {
+    const weatherData = await weatherApiCall();
     const humidityPercent = await weatherData.main.humidity;
 
     if (humidityPercent >= 0 && humidityPercent <= 25) {
@@ -279,6 +397,8 @@ async function getBoth() {
     await weatherMain();
     await weatherHumidity();
     await weatherWind();
+    await weatherClouds();
+    await weatherTemp();
 }
 
 
