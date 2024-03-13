@@ -47,10 +47,6 @@ async function getAll() {
     
 }
 
-
-
-
-
 async function weatherTemp() {
 
     const weatherData = await weatherApiCall();
@@ -59,46 +55,27 @@ async function weatherTemp() {
         return Math.floor(kelvin - 273.15) * 9/5 + 32;
     }
     const temperature = convertKelvin(weatherData.main.temp);
-    
 
     if (temperature < 0 && temperature <= 25) {
 
-        
-
         await pokemonType('ice')
-
-
-
     }
     else if (temperature > 25 && temperature <= 50) {
 
         await pokemonType('rock')
-
-
-
     }
     else if (temperature > 50 && temperature <= 75) {
 
         await pokemonType('bug')
-
-
-
     }
     else if (temperature > 75 && temperature <= 100) {
 
         await pokemonType('dragon')
-
-
     }
     else if (temperature > 100) {
 
-        const pokemonData = await pokemonType('fire')
-
-
+        await pokemonType('fire')
     }
-
-
-
 }
 
 async function weatherClouds() {
@@ -107,34 +84,20 @@ async function weatherClouds() {
 
     if (cloudPercent >= 0 && cloudPercent <= 25) {
 
-        const pokemonData = await pokemonType('grass')
-
-
-
+        await pokemonType('grass')
     }
     else if (cloudPercent > 25 && cloudPercent <= 50) {
 
-        const pokemonData = await pokemonType('bug')
-
-
-
+        await pokemonType('bug')
     }
     else if (cloudPercent > 50 && cloudPercent <= 75) {
 
-        const pokemonData = await pokemonType('electric')
-
-
-
+        await pokemonType('electric')
     }
     else if (cloudPercent > 75 && cloudPercent <= 100) {
 
-        const pokemonData = await pokemonType('water')
-
-
+        await pokemonType('water')
     }
-
-
-
 }
 
 async function weatherHumidity() {
@@ -143,30 +106,19 @@ async function weatherHumidity() {
 
     if (humidityPercent >= 0 && humidityPercent <= 25) {
 
-        const pokemonData = await pokemonType('fire')
-
-
-
+        await pokemonType('fire')
     }
     else if (humidityPercent > 25 && humidityPercent <= 50) {
 
-        const pokemonData = await pokemonType('rock')
-
-
-
+        await pokemonType('rock')
     }
     else if (humidityPercent > 50 && humidityPercent <= 75) {
 
-        const pokemonData = await pokemonType('grass')
-
-
-
+        await pokemonType('grass')
     }
     else if (humidityPercent > 75 && humidityPercent <= 100) {
 
-        const pokemonData = await pokemonType('water')
-
-
+        await pokemonType('water')
     }
 }
 
@@ -178,21 +130,15 @@ async function weatherWind() {
 
       const pokemonData = await pokemonType('ground')
 
-
-
     }
     else if (windSpeed > 5 && windSpeed <= 10) {
 
         const pokemonData = await pokemonType('psychic')
-
-
-        }
+    }
 
     else if (windSpeed > 10) {
 
         const pokemonData = await pokemonType('flying')
-
-
     }
     
 
@@ -207,127 +153,77 @@ async function weatherMain() {
 
     if (weatherCondition === 'Clouds') {
 
-         await pokemonType('dragon')
-
-      
-         
+         await pokemonType('dragon')    
     }
 
     if (weatherCondition === 'Dust') {
 
-         await pokemonType('rock')
-
-      
-         
+         await pokemonType('rock') 
     }
 
     if (weatherCondition === 'Sand') {
 
          await pokemonType('ground')
-
-      
-         
     }
 
     if (weatherCondition === 'Ash') {
 
-         await pokemonType('fire')
-
-      
-         
+         await pokemonType('fire') 
     }
 
     if (weatherCondition === 'Squall') {
 
          await pokemonType('psychic')
-
-      
-         
     }
 
     if (weatherCondition === 'Tornado') {
 
-         await pokemonType('flying')
-
-
-      
-         
+         await pokemonType('flying') 
     }
 
     if (weatherCondition === 'Haze') {
 
-         await pokemonType('poison')
-
-
-      
-         
+         await pokemonType('poison')  
     }
 
     if (weatherCondition === 'Fog') {
 
-         await pokemonType('ghost')
-
-
-      
-         
+         await pokemonType('ghost') 
     }
 
     if (weatherCondition === 'Smoke') {
 
-         await pokemonType('fire')
-
-      
-         
+         await pokemonType('fire')  
     }
 
     if (weatherCondition === 'Mist') {
 
-         await pokemonType('fairy')
-
-      
-         
+         await pokemonType('fairy') 
     }
 
     if (weatherCondition === 'Snow') {
 
-         await pokemonType('ice')
-
-      
-         
+         await pokemonType('ice') 
     }
 
     if (weatherCondition === 'Rain') {
 
          await pokemonType('water')
-
-      
-         
     }
 
     if (weatherCondition === 'Drizzle') {
 
          await pokemonType('psychic')
-
-      
-         
     }
 
     if (weatherCondition === 'Thunderstorm') {
 
-         await pokemonType('electric')
-        
-
-      
-         
+         await pokemonType('electric')   
     }
 
     if (weatherCondition === 'Clear') {
 
-         await pokemonType('grass')
-        
-
-      
-         
+         await pokemonType('grass')  
     }
 
 }
