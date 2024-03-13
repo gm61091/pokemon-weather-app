@@ -79,3 +79,14 @@
 //if wind > 5 && < 10 ? grass && rock
 //if wind > 10 && < 15 ? rock && flying
 //if wind > 15 ? flying && dragon
+
+
+Get the Images -- I want you to just show me how you would drill down to the image from this call:
+let pokemonDataUrl = await pokemonData.pokemon[0].pokemon.url 
+
+So once you open the link from that point, show me how you would get the images. for example,
+ if it was in main > images[0] > img_url, I want you to write pokemonDataUrl.main.images[0].img_url
+pokemonDataUrl.sprites[0].front_default 
+pokemonDataUrl.sprites.other.home.front_default
+pokemonDataUrl.sprites.other.official_artwork.front_default
+pokemonDataUrl.sprites.other.showdown.front_default

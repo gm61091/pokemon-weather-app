@@ -15,15 +15,13 @@ async function weatherApiCall() {
 
 
 async function weatherTemp() {
-    
+
     const weatherData = await weatherApiCall();
 
     function convertKelvin(kelvin) {
         return Math.floor(kelvin - 273.15) * 9/5 + 32;
     }
     const temperature = convertKelvin(weatherData.main.temp);
-
-    console.log(weatherData);
     
 
     if (temperature < 0 && temperature <= 25) {
@@ -83,7 +81,6 @@ async function weatherTemp() {
 
 async function weatherClouds() {
     const weatherData = await weatherApiCall();
-    console.log(weatherData)
     const cloudPercent = await weatherData.clouds.all;
 
     if (cloudPercent >= 0 && cloudPercent <= 25) {
@@ -449,6 +446,7 @@ async function pokemonType(typeOfPokemon) {
 
     const response     = await fetch(`https://pokeapi.co/api/v2/type/${typeOfPokemon}`);
     const data         = await response.json();
+    console.log(data)
 
     return data;
 }
