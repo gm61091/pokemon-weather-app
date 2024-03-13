@@ -1,15 +1,9 @@
+
 //weathercapi call
+
 async function weatherFunction() {
 
-    const weatherApi = '885df44cffe885e5718d2bd8f918b530';
-    const city = document.getElementById('city').value;
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApi}`;
-
-    fetch(weatherUrl)
-    .then(response => response.json())
-    .then(data => {
-        
-        console.log(data)
+const data = await weatherApiCall();
 
         let weatherResult = document.createElement('ul'); 
         
@@ -27,9 +21,8 @@ async function weatherFunction() {
             <li>Clouds ${data.clouds.all} % coverage</li>
         `;
         weather.appendChild(weatherResult)
-        })
     
-    .catch(error => console.error('Error:', error))};
+    };
 
 
 async function weatherApiCall() {
@@ -51,6 +44,7 @@ async function getAll() {
     await weatherWind();
     await weatherClouds();
     await weatherTemp();
+    
 }
 
 
@@ -71,51 +65,36 @@ async function weatherTemp() {
 
         
 
-        const pokemonData = await pokemonType('ice')
+        await pokemonType('ice')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
 
     }
     else if (temperature > 25 && temperature <= 50) {
 
-        const pokemonData = await pokemonType('bug')
+        await pokemonType('rock')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
 
     }
     else if (temperature > 50 && temperature <= 75) {
 
-        const pokemonData = await pokemonType('ground')
+        await pokemonType('ground')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
 
     }
     else if (temperature > 75 && temperature <= 100) {
 
-        const pokemonData = await pokemonType('bug')
+        await pokemonType('dragon')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
     }
     else if (temperature > 100) {
 
         const pokemonData = await pokemonType('fire')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
     }
 
 
@@ -130,40 +109,28 @@ async function weatherClouds() {
 
         const pokemonData = await pokemonType('grass')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
 
     }
     else if (cloudPercent > 25 && cloudPercent <= 50) {
 
         const pokemonData = await pokemonType('bug')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
 
     }
     else if (cloudPercent > 50 && cloudPercent <= 75) {
 
-        const pokemonData = await pokemonType('flying')
+        const pokemonData = await pokemonType('electric')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
 
     }
     else if (cloudPercent > 75 && cloudPercent <= 100) {
 
         const pokemonData = await pokemonType('water')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
     }
 
 
@@ -176,42 +143,30 @@ async function weatherHumidity() {
 
     if (humidityPercent >= 0 && humidityPercent <= 25) {
 
-        const pokemonData = await pokemonType('ground')
+        const pokemonData = await pokemonType('fire')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
 
     }
     else if (humidityPercent > 25 && humidityPercent <= 50) {
 
         const pokemonData = await pokemonType('rock')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
 
     }
     else if (humidityPercent > 50 && humidityPercent <= 75) {
 
         const pokemonData = await pokemonType('grass')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
 
     }
     else if (humidityPercent > 75 && humidityPercent <= 100) {
 
         const pokemonData = await pokemonType('water')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
     }
 }
 
@@ -223,30 +178,21 @@ async function weatherWind() {
 
       const pokemonData = await pokemonType('ground')
 
-      let pTag = document.createElement('p')
-      pTag.innerText = pokemonData.pokemon[0].pokemon.name
-      let weather3 = document.getElementById('weather3')
-      weather3.appendChild(pTag)
+
 
     }
     else if (windSpeed > 5 && windSpeed <= 10) {
 
-        const pokemonData = await pokemonType('fairy')
+        const pokemonData = await pokemonType('psychic')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
         }
 
     else if (windSpeed > 10) {
 
         const pokemonData = await pokemonType('flying')
 
-        let pTag = document.createElement('p')
-        pTag.innerText = pokemonData.pokemon[0].pokemon.name
-        let weather3 = document.getElementById('weather3')
-        weather3.appendChild(pTag)
+
     }
     
 
@@ -261,170 +207,126 @@ async function weatherMain() {
 
     if (weatherCondition === 'Clouds') {
 
-        const pokemonData = await pokemonType('dragon')
+         await pokemonType('dragon')
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Dust') {
 
-        const pokemonData = await pokemonType('rock')
+         await pokemonType('rock')
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Sand') {
 
-        const pokemonData = await pokemonType('ground')
+         await pokemonType('ground')
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Ash') {
 
-        const pokemonData = await pokemonType('fire')
+         await pokemonType('fire')
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Squall') {
 
-        const pokemonData = await pokemonType('psychic')
+         await pokemonType('psychic')
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Tornado') {
 
-        const pokemonData = await pokemonType('flying')
+         await pokemonType('flying')
 
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Haze') {
 
-        const pokemonData = await pokemonType('poison')
+         await pokemonType('poison')
 
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Fog') {
 
-        const pokemonData = await pokemonType('ghost')
+         await pokemonType('ghost')
 
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Smoke') {
 
-        const pokemonData = await pokemonType('fire')
+         await pokemonType('fire')
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Mist') {
 
-        const pokemonData = await pokemonType('water')
+         await pokemonType('fairy')
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Snow') {
 
-        const pokemonData = await pokemonType('ice')
+         await pokemonType('ice')
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Rain') {
 
-        const pokemonData = await pokemonType('water')
+         await pokemonType('water')
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Drizzle') {
 
-        const pokemonData = await pokemonType('water')
+         await pokemonType('psychic')
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Thunderstorm') {
 
-        const pokemonData = await pokemonType('electric')
+         await pokemonType('electric')
         
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
     if (weatherCondition === 'Clear') {
 
-        const pokemonData = await pokemonType('grass')
+         await pokemonType('grass')
+        
 
-       let pTag = document.createElement('p')
-       pTag.innerText = pokemonData.pokemon[0].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
+      
          
     }
 
@@ -435,47 +337,60 @@ async function weatherMain() {
 //pulling both pokemon apis
 async function bothPokemon() {
     await pokemonType('water');
-    await pokemonImage();
+    //await pokemonImage();
 }
 //pokemon api call
 async function pokemonType(typeOfPokemon) {
 
-   // const type = 'water';
-   // const pokemonUrl = `https://pokeapi.co/api/v2/type/${typeOfPokemon}`;
-
     const response     = await fetch(`https://pokeapi.co/api/v2/type/${typeOfPokemon}`);
     const data         = await response.json();
     console.log(data)
+    const randomPokemon = Math.floor(Math.random() * 25);
+    let pokemon2 = document.getElementById('pokemon2')
+    let pokemonDataUrl = await data.pokemon[randomPokemon].pokemon.url 
+    const pokemonData = await fetch(pokemonDataUrl)
+    const pokemonReturn = await pokemonData.json()
+    //const imgUrl = pokemonReturn.sprites.other[`official-artwork`].front_default
+    const imgUrl = pokemonReturn.sprites.other.showdown.front_default
+    const pokemonSprite = document.createElement('img')
+    pokemonSprite.setAttribute('src', imgUrl)
+    pokemon2.appendChild(pokemonSprite)
+
+    let pTag = document.createElement('p')
+       pTag.innerText = data.pokemon[randomPokemon].pokemon.name
+       let weather2 = document.getElementById('weather2')
+       weather2.appendChild(pTag)
+    
 
     return data;
 }
 
 //pokemon image api call
 
-async function pokemonImage() {
+// async function pokemonImage() {
 
-    const pokemon = document.getElementById('pokemon');
-    const pokemon2= document.getElementById('pokemon2');
-    const pokemonValue = pokemon.value;
-    const imageUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonValue}`;
-    let pokemonResult = document.createElement('ul');
+//     const pokemon = document.getElementById('pokemon');
+//     const pokemon2= document.getElementById('pokemon2');
+//     const pokemonValue = pokemon.value;
+//     const imageUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonValue}`;
+//     let pokemonResult = document.createElement('ul');
 
-    fetch(imageUrl)
-    .then(response => response.json())
-    .then(data => {
+//     fetch(imageUrl)
+//     .then(response => response.json())
+//     .then(data => {
 
 
-        console.log(data)
+//         console.log(data)
 
         
-        pokemonResult.innerHTML = `
-        <li>Pokemon: ${data.name}</li>
-        <li>ID: ${data.id}</li>
-        <li>Type: ${data.types[0].type.name}</li>
-        `;
-        let imgElement = document.getElementById('pokemonSprite')
-        imgElement.setAttribute('src', data.sprites.front_default)
-        pokemon2.appendChild(pokemonResult)
-    })
-    .catch(error => console.error('Error:', error))};
+//         pokemonResult.innerHTML = `
+//         <li>Pokemon: ${data.name}</li>
+//         <li>ID: ${data.id}</li>
+//         <li>Type: ${data.types[0].type.name}</li>
+//         `;
+//         let imgElement = document.getElementById('pokemonSprite')
+//         imgElement.setAttribute('src', data.sprites.front_default)
+//         pokemon2.appendChild(pokemonResult)
+//     })
+//     .catch(error => console.error('Error:', error))};
 
