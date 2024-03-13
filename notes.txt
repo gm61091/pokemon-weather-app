@@ -1,0 +1,81 @@
+// weclome for page $$
+// description of what it does $$
+// a couple of permanent images for landing page
+// search bar $$
+// result box for weather results
+// potential pokemon list based off weather result.
+// may add a database they can click and keep pokemon like the game 
+
+// pulling from pokemon types function -
+//id
+//type
+//name
+
+//pulling from pokemon image function -
+//default_sprite
+
+//pokeomn type [
+    //water
+    //electric
+    //posion
+    //dark
+    //ghost
+    //normal
+    //bug
+    //fire
+    //psychic
+    //fighting
+    //ground
+    //rock
+    //gragon
+    //grass
+    //steel
+    //flying
+    //fairy
+    //ice
+//]
+
+//function for time
+// if day ? bug && ground
+// if night ? ghost && psychic
+
+// function for tempuratre
+//if temp < 30 ? ice && fairy
+//if temp > 30 && < 60 ? ground && rock pokemon
+//if temp > 60 && < 90 ? bug && grass pokemon
+//if temp > 90 ? fire && Dragon pokemon
+
+//function for weather.main
+//if weather = clouds ? water && ghost
+//if weather = dust ? ground && ghost
+//if weather = sand ? ground && ghost
+//if weather = Ash ? fire && ghost
+//if weather = Squall ? water && ghost
+//if weather = Tordnado ? water && ghost
+//if weather = haze ? ghost && dragon
+//if weather = fog ? ghost && psychic
+//if weather = smoke ? fire && poison
+//if weather = mist ? water && ghost
+//if weather = snow ? ice && fairy
+//if weather = rain ? water && grass 
+//if weather = drizzle ? water && grass
+//if weather = thunderstorm ? water && electric 
+//if weather = clear ? fire && normal
+
+//fucntion for clouds
+//if clouds > 0 && < 25 ? grass and flying pokemon
+//if clouds > 25 && < 50 ? ground && bug
+//if clouds > 50 && < 84 ? rock && electric
+//if clouds > 84 && < 100 ? ghost && water
+
+//function for humidity
+//if humidtiy > 0 && < 25 ? rock && fire
+//if humidity > 25 && < 50 ? ground && steel
+//if humidity > 50 && < 75 ? grass && bug
+//if humidity > 75 && < 100 ? water && grass
+
+//function for wind
+//if wind > 0 && < 5 ? ground && bug
+//if wind > 5 && < 10 ? grass && rock
+//if wind > 10 && < 15 ? rock && flying
+//if wind > 15 ? flying && dragon

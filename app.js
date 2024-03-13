@@ -1,84 +1,3 @@
-// weclome for page $$
-// description of what it does $$
-// a couple of permanent images for landing page
-// search bar $$
-// result box for weather results
-// potential pokemon list based off weather result.
-// may add a database they can click and keep pokemon like the game 
-
-// pulling from pokemon types function -
-//id
-//type
-//name
-
-//pulling from pokemon image function -
-//default_sprite
-
-//pokeomn type [
-    //water
-    //electric
-    //posion
-    //dark
-    //ghost
-    //normal
-    //bug
-    //fire
-    //psychic
-    //fighting
-    //ground
-    //rock
-    //gragon
-    //grass
-    //steel
-    //flying
-    //fairy
-    //ice
-//]
-
-//function for time
-// if day ? bug && ground
-// if night ? ghost && psychic
-
-// function for tempuratre
-//if temp < 30 ? ice && fairy
-//if temp > 30 && < 60 ? ground && rock pokemon
-//if temp > 60 && < 90 ? bug && grass pokemon
-//if temp > 90 ? fire && Dragon pokemon
-
-//function for weather.main
-//if weather = clouds ? water && ghost
-//if weather = dust ? ground && ghost
-//if weather = sand ? ground && ghost
-//if weather = Ash ? fire && ghost
-//if weather = Squall ? water && ghost
-//if weather = Tordnado ? water && ghost
-//if weather = haze ? ghost && dragon
-//if weather = fog ? ghost && psychic
-//if weather = smoke ? fire && poison
-//if weather = mist ? water && ghost
-//if weather = snow ? ice && fairy
-//if weather = rain ? water && grass 
-//if weather = drizzle ? water && grass
-//if weather = thunderstorm ? water && electric 
-//if weather = clear ? fire && normal
-
-//fucntion for clouds
-//if clouds > 0 && < 25 ? grass and flying pokemon
-//if clouds > 25 && < 50 ? ground && bug
-//if clouds > 50 && < 84 ? rock && electric
-//if clouds > 84 && < 100 ? ghost && water
-
-//function for humidity
-//if humidtiy > 0 && < 25 ? rock && fire
-//if humidity > 25 && < 50 ? ground && steel
-//if humidity > 50 && < 75 ? grass && bug
-//if humidity > 75 && < 100 ? water && grass
-
-//function for wind
-//if wind > 0 && < 5 ? ground && bug
-//if wind > 5 && < 10 ? grass && rock
-//if wind > 10 && < 15 ? rock && flying
-//if wind > 15 ? flying && dragon
 
 
 async function weatherApiCall() {
@@ -185,7 +104,6 @@ async function weatherMain() {
     if (weatherCondition === 'Clouds') {
 
         const pokemonData = await pokemonType('dragon')
-        //console.log(pokemonData)
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -197,7 +115,6 @@ async function weatherMain() {
     if (weatherCondition === 'Dust') {
 
         const pokemonData = await pokemonType('rock')
-        //console.log(pokemonData)
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -209,7 +126,6 @@ async function weatherMain() {
     if (weatherCondition === 'Sand') {
 
         const pokemonData = await pokemonType('ground')
-        //console.log(pokemonData)
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -221,7 +137,6 @@ async function weatherMain() {
     if (weatherCondition === 'Ash') {
 
         const pokemonData = await pokemonType('fire')
-        //console.log(pokemonData)
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -233,7 +148,6 @@ async function weatherMain() {
     if (weatherCondition === 'Squall') {
 
         const pokemonData = await pokemonType('psychic')
-        //console.log(pokemonData)
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -245,7 +159,7 @@ async function weatherMain() {
     if (weatherCondition === 'Tornado') {
 
         const pokemonData = await pokemonType('flying')
-        //console.log(pokemonData)
+
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -257,7 +171,7 @@ async function weatherMain() {
     if (weatherCondition === 'Haze') {
 
         const pokemonData = await pokemonType('poison')
-        //console.log(pokemonData)
+
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -269,7 +183,7 @@ async function weatherMain() {
     if (weatherCondition === 'Fog') {
 
         const pokemonData = await pokemonType('ghost')
-        //console.log(pokemonData)
+
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -281,7 +195,6 @@ async function weatherMain() {
     if (weatherCondition === 'Smoke') {
 
         const pokemonData = await pokemonType('fire')
-        //console.log(pokemonData)
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -293,7 +206,6 @@ async function weatherMain() {
     if (weatherCondition === 'Mist') {
 
         const pokemonData = await pokemonType('water')
-        //console.log(pokemonData)
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -305,7 +217,6 @@ async function weatherMain() {
     if (weatherCondition === 'Snow') {
 
         const pokemonData = await pokemonType('ice')
-        //console.log(pokemonData)
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -317,7 +228,6 @@ async function weatherMain() {
     if (weatherCondition === 'Rain') {
 
         const pokemonData = await pokemonType('water')
-        //console.log(pokemonData)
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -329,7 +239,6 @@ async function weatherMain() {
     if (weatherCondition === 'Drizzle') {
 
         const pokemonData = await pokemonType('water')
-        //console.log(pokemonData)
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -341,7 +250,7 @@ async function weatherMain() {
     if (weatherCondition === 'Thunderstorm') {
 
         const pokemonData = await pokemonType('electric')
-        //console.log(pokemonData)
+        
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -353,7 +262,6 @@ async function weatherMain() {
     if (weatherCondition === 'Clear') {
 
         const pokemonData = await pokemonType('grass')
-        //console.log(pokemonData)
 
        let pTag = document.createElement('p')
        pTag.innerText = pokemonData.pokemon[0].pokemon.name
@@ -387,7 +295,7 @@ async function weatherFunction() {
         
         console.log(data)
 
-        let weatherResult = document.createElement('ul');  //chats version
+        let weatherResult = document.createElement('ul'); 
         
         function convertKelvin(kelvin) {
             return Math.floor(kelvin - 273.15) * 9/5 + 32;
@@ -439,8 +347,6 @@ async function pokemonImage() {
     .then(response => response.json())
     .then(data => {
 
-        // const pokemonSprite = data.sprites.front_default;
-        // const imgElement = document.getElementById('pokemonSprite')
 
         console.log(data)
 
