@@ -5,7 +5,7 @@ async function weatherFunction() {
 
 const data = await weatherApiCall();
 
-        let weatherResult = document.createElement('ul'); 
+        let weatherResult = document.createElement('li'); 
         
         function convertKelvin(kelvin) {
             return Math.floor(kelvin - 273.15) * 9/5 + 32;
@@ -26,7 +26,7 @@ const data = await weatherApiCall();
 
 
 async function weatherApiCall() {
-    const weatherApi = '';
+    const weatherApi = '885df44cffe885e5718d2bd8f918b530';
     const city                = document.getElementById('city').value;
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApi}`;
 
@@ -62,7 +62,7 @@ async function weatherTemp() {
     }
     else if (temperature > 25 && temperature <= 50) {
 
-        await pokemonType('rock')
+        await pokemonType('psychic')
     }
     else if (temperature > 50 && temperature <= 75) {
 
@@ -88,7 +88,7 @@ async function weatherClouds() {
     }
     else if (cloudPercent > 25 && cloudPercent <= 50) {
 
-        await pokemonType('bug')
+        await pokemonType('ghost')
     }
     else if (cloudPercent > 50 && cloudPercent <= 75) {
 
@@ -110,7 +110,7 @@ async function weatherHumidity() {
     }
     else if (humidityPercent > 25 && humidityPercent <= 50) {
 
-        await pokemonType('rock')
+        await pokemonType('ghost')
     }
     else if (humidityPercent > 50 && humidityPercent <= 75) {
 
@@ -128,7 +128,7 @@ async function weatherWind() {
 
     if (windSpeed >= 0 && windSpeed <= 5) {
 
-      const pokemonData = await pokemonType('ground')
+      const pokemonData = await pokemonType('bug')
 
     }
     else if (windSpeed > 5 && windSpeed <= 10) {
@@ -229,64 +229,99 @@ async function weatherMain() {
 }
 
 
-
-//pulling both pokemon apis
-async function bothPokemon() {
-    await pokemonType('water');
-    //await pokemonImage();
-}
 //pokemon api call
+
 async function pokemonType(typeOfPokemon) {
+    const response = await fetch(`https://pokeapi.co/api/v2/type/${typeOfPokemon}`);
+    const data = await response.json();
 
-    const response     = await fetch(`https://pokeapi.co/api/v2/type/${typeOfPokemon}`);
-    const data         = await response.json();
-    //console.log(data)
-    const randomPokemon = Math.floor(Math.random() * 25);
-    let pokemon2 = document.getElementById('pokemon2')
-    let pokemonDataUrl = await data.pokemon[randomPokemon].pokemon.url 
-    const pokemonData = await fetch(pokemonDataUrl)
-    const pokemonReturn = await pokemonData.json()
-    //const imgUrl = pokemonReturn.sprites.other[`official-artwork`].front_default
-    const imgUrl = pokemonReturn.sprites.other.showdown.front_default
-    const pokemonSprite = document.createElement('img')
-    pokemonSprite.setAttribute('src', imgUrl)
-    pokemon2.appendChild(pokemonSprite)
+    function pickThree() {
+        let results = [];
+        for (let i = 0; i < 4; i++) {
+            const randomPokemon = Math.floor(Math.random() * 50);
+            results.push(randomPokemon);
+        }
+        return results;
+    }
 
-    let pTag = document.createElement('p')
-       pTag.innerText = data.pokemon[randomPokemon].pokemon.name
-       let weather2 = document.getElementById('weather2')
-       weather2.appendChild(pTag)
-    
+
+    const randomPokemonIds = pickThree();
+
+    // Iterate over the random Pokémon IDs
+    for (const randomPokemonId of randomPokemonIds) {
+        const pokemonUrl = data.pokemon[randomPokemonId].pokemon.url;
+        const pokemonResponse = await fetch(pokemonUrl);
+        const pokemonData = await pokemonResponse.json();
+
+        //const spriteUrl = pokemonData.sprites.other['official-artwork'].front_default;
+        const spriteUrl = pokemonData.sprites.other.showdown.front_default;
+
+        const pokemonContainer = document.getElementById('pokemonContainer');
+        const pokemonSprite = document.createElement('img');
+        pokemonSprite.setAttribute('src', spriteUrl);
+        pokemonSprite.classList.add('pokemon-sprite');
+        pokemonContainer.appendChild(pokemonSprite);
+
+        // Get the modal
+    const modal = document.getElementById("myModal");
+
+// Get the image and name elements in the modal
+    const modalImage = document.getElementById("modalImage");
+    const modalName = document.getElementById("modalName");
+
+// Get the <span> element that closes the modal
+    const span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the image, open the modal
+    pokemonSprite.addEventListener('click', () => {
+    modal.style.display = "block"; // Display the modal
+
+    // Set the image source and name in the modal
+    modalImage.src = spriteUrl;
+    modalName.innerText = pokemonData.name;
+    });
+
+// When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+        
+
+    }
 
     return data;
 }
+async function fetchRandomPokemonImage() {
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
+    const data = await response.json();
+    const randomIndex = Math.floor(Math.random() * data.results.length);
+    const pokemonName = data.results[randomIndex].name;
+    const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+    const pokemonData = await pokemonResponse.json();
+    return pokemonData.sprites.other.showdown.front_default
+}
 
-//pokemon image api call
+async function displayRandomPokemonImages() {
+    const leftImage1 = document.getElementById('leftImage1');
+    const leftImage2 = document.getElementById('leftImage2');
+    const rightImage1 = document.getElementById('rightImage1');
+    const rightImage2 = document.getElementById('rightImage2');
+    const leftImageUrl1 = await fetchRandomPokemonImage();
+    const leftImageUrl2 = await fetchRandomPokemonImage();
+    const rightImageUrl1 = await fetchRandomPokemonImage();
+    const rightImageUrl2 = await fetchRandomPokemonImage();
+    leftImage1.src = leftImageUrl1;
+    leftImage2.src = leftImageUrl2;
+    rightImage1.src = rightImageUrl1;
+    rightImage2.src = rightImageUrl2;
+}
 
-// async function pokemonImage() {
-
-//     const pokemon = document.getElementById('pokemon');
-//     const pokemon2= document.getElementById('pokemon2');
-//     const pokemonValue = pokemon.value;
-//     const imageUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonValue}`;
-//     let pokemonResult = document.createElement('ul');
-
-//     fetch(imageUrl)
-//     .then(response => response.json())
-//     .then(data => {
-
-
-//         console.log(data)
-
-        
-//         pokemonResult.innerHTML = `
-//         <li>Pokemon: ${data.name}</li>
-//         <li>ID: ${data.id}</li>
-//         <li>Type: ${data.types[0].type.name}</li>
-//         `;
-//         let imgElement = document.getElementById('pokemonSprite')
-//         imgElement.setAttribute('src', data.sprites.front_default)
-//         pokemon2.appendChild(pokemonResult)
-//     })
-//     .catch(error => console.error('Error:', error))};
-
+displayRandomPokemonImages();
