@@ -61,8 +61,6 @@
 
 
 
-
-/* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -77,7 +75,7 @@
   }
   
 
-/* Modal Content/Box */
+
 .modal-content {
     background-color: #fefefe;
     margin: auto; /* Center the modal horizontally */
@@ -90,16 +88,12 @@
   }
   
   
-  
-  
-  /* Close Button */
   .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
-  /* Hide the close button (x) */
 .modal-close {
     display: none;
   }

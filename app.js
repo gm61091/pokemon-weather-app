@@ -235,9 +235,9 @@ async function pokemonType(typeOfPokemon) {
     const response = await fetch(`https://pokeapi.co/api/v2/type/${typeOfPokemon}`);
     const data = await response.json();
 
-    function pickThree() {
+    function pickSix() {
         let results = [];
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 6; i++) {
             const randomPokemon = Math.floor(Math.random() * 50);
             results.push(randomPokemon);
         }
@@ -245,7 +245,7 @@ async function pokemonType(typeOfPokemon) {
     }
 
 
-    const randomPokemonIds = pickThree();
+    const randomPokemonIds = pickSix();
 
     // Iterate over the random Pokémon IDs
     for (const randomPokemonId of randomPokemonIds) {
@@ -312,16 +312,22 @@ async function fetchRandomPokemonImage() {
 async function displayRandomPokemonImages() {
     const leftImage1 = document.getElementById('leftImage1');
     const leftImage2 = document.getElementById('leftImage2');
+    const leftImage3 = document.getElementById('leftImage3');
     const rightImage1 = document.getElementById('rightImage1');
     const rightImage2 = document.getElementById('rightImage2');
+    const rightImage3 = document.getElementById('rightImage3');
     const leftImageUrl1 = await fetchRandomPokemonImage();
     const leftImageUrl2 = await fetchRandomPokemonImage();
+    const leftImageUrl3 = await fetchRandomPokemonImage();
     const rightImageUrl1 = await fetchRandomPokemonImage();
     const rightImageUrl2 = await fetchRandomPokemonImage();
+    const rightImageUrl3 = await fetchRandomPokemonImage();
     leftImage1.src = leftImageUrl1;
     leftImage2.src = leftImageUrl2;
+    leftImage3.src = leftImageUrl3;
     rightImage1.src = rightImageUrl1;
     rightImage2.src = rightImageUrl2;
+    rightImage3.src = rightImageUrl3;
 }
 
 displayRandomPokemonImages();
