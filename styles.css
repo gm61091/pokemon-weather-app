@@ -1,12 +1,12 @@
 .pokemon-container {
-    padding: 10px;
+    padding: px;
     display: flex;
     flex-direction: row;
     background-color: #ffffff;
-    margin-left: 20px;
+    margin-left: 30px;
     flex-wrap: wrap;
     align-items: center; /* Center items horizontally */
-    gap: 35px; /* Spacing between items */
+    gap: 45px; /* Spacing between items */
   }
   
   .pokemon-name {
@@ -14,8 +14,8 @@
   }
   
   .pokemon-sprite {
-    width: 70px; /* Adjust the width of the sprite */
-    height: 70px; /* Maintain aspect ratio */
+    width: 60px; /* Adjust the width of the sprite */
+    height: 60px; /* Maintain aspect ratio */
   }
   .header {
     text-align: center;
