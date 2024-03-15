@@ -3,6 +3,9 @@
 
 async function weatherFunction() {
 
+    const weatherContainer = document.getElementById('weather');
+    weatherContainer.innerHTML = '';
+
 const data = await weatherApiCall();
 
         let weatherResult = document.createElement('li'); 
