@@ -237,7 +237,8 @@ async function pokemonType(typeOfPokemon) {
 
     function pickSix() {
         let results = [];
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 9
+            ; i++) {
             const randomPokemon = Math.floor(Math.random() * 50);
             results.push(randomPokemon);
         }
