@@ -1,9 +1,12 @@
 
 //weathercapi call
 
+
 async function weatherFunction() {
 
     const weatherContainer = document.getElementById('weather');
+    const pokemonH5 = document.getElementById('pokemonH5');
+    pokemonH5.innerText = 'Potential pokemon in your area';
     weatherContainer.innerHTML = '';
 
 const data = await weatherApiCall();
@@ -23,6 +26,7 @@ const data = await weatherApiCall();
             <li>Wind Speed: ${data.wind.speed} MPH</li>
             <li>Clouds ${data.clouds.all} % coverage</li>
         `;
+        weather.setAttribute('class', 'weather-result')
         weather.appendChild(weatherResult)
     
     };
@@ -41,6 +45,8 @@ async function weatherApiCall() {
 
 //function to call both apis
 async function getAll() {
+        const pokemonContainer = document.getElementById('pokemonContainer');
+        pokemonContainer.innerHTML = '';
     await weatherFunction();
     await weatherMain();
     await weatherHumidity();
@@ -235,8 +241,15 @@ async function weatherMain() {
 //pokemon api call
 
 async function pokemonType(typeOfPokemon) {
+
+    const response2 = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
+    const data2 = await response2.json();
+    console.log(data2);
+
+
     const response = await fetch(`https://pokeapi.co/api/v2/type/${typeOfPokemon}`);
     const data = await response.json();
+    console.log(data);
 
     function pickSix() {
         let results = [];
