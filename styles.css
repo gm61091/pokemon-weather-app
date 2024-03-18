@@ -5,8 +5,8 @@
     background-color: #ffffff;
     margin-left: 30px;
     flex-wrap: wrap;
-    align-items: center; /* Center items horizontally */
-    gap: 45px; /* Spacing between items */
+    align-items: center; 
+    gap: 45px; 
   }
   
   .pokemon-name {
@@ -14,8 +14,8 @@
   }
   
   .pokemon-sprite {
-    width: 60px; /* Adjust the width of the sprite */
-    height: 60px; /* Maintain aspect ratio */
+    width: 60px; 
+    height: 60px; 
   }
   .header {
     text-align: center;
@@ -51,43 +51,60 @@
 
 .weather-result {
 
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none; 
     padding: 20px;
-    margin: 15;
-    border: 1px solid #ccc; /* Add border for each result */
+    margin: 10;
+    margin-top: 10px;
+    border: 1px solid #ccc; 
     border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #8ddbdc; /* Background color */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow effect */
+    margin-bottom: 5px;
+    background-color: #8ddbdc; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
     text-align: center;
+    list-style: none;
+    padding: 0;
 
+}
+.weather-result {
+    list-style: none;
+    padding: 0;
+}
+
+.weather-result li {
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.label {
+    font-weight: bold;
+    margin-right: 5px;
 }
 
 
 
-
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 9999; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
     left: 0;
     top: 0;
-    width: 20%; /* Full width */
-    height: 20%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 20%; 
+    height: 20%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
   }
   
 
 
 .modal-content {
     background-color: #fefefe;
-    margin: auto; /* Center the modal horizontally */
-    margin-top: 20%; /* Adjust the top margin to position it vertically */
+    margin: auto; 
+    margin-top: 20%; 
     padding: 10px;
     border: 1px solid #888;
-    max-width: 100px; /* Set a maximum width for the modal box */
+    max-width: 100px; 
     text-align: center;
     
   }

@@ -1,35 +1,32 @@
 
 //weathercapi call
 
-
 async function weatherFunction() {
-
     const weatherContainer = document.getElementById('weather');
     const pokemonH5 = document.getElementById('pokemonH5');
     pokemonH5.innerText = 'Potential pokemon in your area';
     weatherContainer.innerHTML = '';
 
-const data = await weatherApiCall();
+    const data = await weatherApiCall();
 
-        let weatherResult = document.createElement('li'); 
-        
-        function convertKelvin(kelvin) {
-            return Math.floor(kelvin - 273.15) * 9/5 + 32;
-        }
-        weatherResult.innerHTML = `
-            <li>City: ${data.name}</li>
-            <li>Description: ${data.weather[0].description}</li>
-            <li>Temperature: ${convertKelvin(data.main.temp)} Degrees</li>
-            <li>Weather: ${data.weather[0].main}</li>
-            <li>Time: ${data.dt}</li>
-            <li>Humidity: ${data.main.humidity} %</li>
-            <li>Wind Speed: ${data.wind.speed} MPH</li>
-            <li>Clouds ${data.clouds.all} % coverage</li>
-        `;
-        weather.setAttribute('class', 'weather-result')
-        weather.appendChild(weatherResult)
+    let weatherResult = document.createElement('ul'); // Change to <ul> to contain list items
     
-    };
+    function convertKelvin(kelvin) {
+        return Math.floor(kelvin - 273.15) * 9/5 + 32;
+    }
+    weatherResult.innerHTML = `
+        <li><span class="label">City:</span> ${data.name}</li>
+        <li><span class="label">Description:</span> ${data.weather[0].description}</li>
+        <li><span class="label">Temperature:</span> ${convertKelvin(data.main.temp)} Degrees</li>
+        <li><span class="label">Weather:</span> ${data.weather[0].main}</li>
+        <li><span class="label">Humidity:</span> ${data.main.humidity} %</li>
+        <li><span class="label">Wind Speed:</span> ${data.wind.speed} MPH</li>
+        <li><span class="label">Clouds:</span> ${data.clouds.all} % coverage</li>
+    `;
+    
+    weatherResult.classList.add('weather-result');
+    weatherContainer.appendChild(weatherResult);
+}
 
 
 async function weatherApiCall() {
