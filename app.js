@@ -262,7 +262,6 @@ async function pokemonType(typeOfPokemon) {
         const pokemonResponse = await fetch(pokemonUrl);
         const pokemonData = await pokemonResponse.json();
 
-        //const spriteUrl = pokemonData.sprites.other['official-artwork'].front_default;
         const spriteUrl = pokemonData.sprites.other.showdown.front_default;
 
         const pokemonContainer = document.getElementById('pokemonContainer');

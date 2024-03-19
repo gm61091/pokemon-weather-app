@@ -13,7 +13,7 @@ The Pokémon Weather App is a web application that utilizes both the Pokémon AP
 ## APIs Used
 
 - [Pokémon API](https://pokeapi.co/): Used to retrieve Pokémon information.
-- [Weather API](#): Replace with the actual URL of the weather API you are using.
+- [Weather API](https://openweathermap.org/api): Used to retrieve weahter information.
 
 ## Installation
 
@@ -21,5 +21,4 @@ The Pokémon Weather App is a web application that utilizes both the Pokémon AP
 2. Navigate to the project directory: `cd pokemon-weather-app`
 3. Install dependencies: `npm install` or `yarn install`
 
-## Usage
 

@@ -144,3 +144,4 @@ pokemon will show image name and id
 // pokemonName.classList.add('pokemon-name');
 // pokemonContainer.appendChild(pokemonName);
 
+     //const spriteUrl = pokemonData.sprites.other['official-artwork'].front_default;
