@@ -1,5 +1,6 @@
 .pokemon-container {
     padding: px;
+    margin-top: 40px;
     display: flex;
     flex-direction: row;
     background-color: #ffffff;
@@ -8,6 +9,8 @@
     align-items: center; 
     gap: 45px; 
   }
+
+
   
   .pokemon-name {
     font-size: 28px;
@@ -20,7 +23,7 @@
   .header {
     text-align: center;
     padding: 5px;
-    background-color: #c3eeee;
+    background-color: #78eef0;
     border: 1px solid #e6e3e3;
     border-radius: 10px;
     display: flex;
@@ -35,6 +38,7 @@
 
 .h5 {
     text-align: center;
+    font-weight: bold;
 }
 
 .container {
@@ -50,29 +54,40 @@
 }
 
 .weather-result {
+    list-style-type: none;
+    padding: 5px;
+  }
+  
+  .label {
+    font-weight: bold;
 
-    list-style-type: none; 
-    padding: 20px;
-    margin: 10;
-    margin-top: 10px;
-    border: 1px solid #ccc; 
-    border-radius: 5px;
-    margin-bottom: 5px;
-    background-color: #8ddbdc; 
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .result-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .result-group {
+    flex: 1;
     text-align: center;
-    list-style: none;
-    padding: 0;
+  }
+  
+  .result-group:first-child {
+    text-align: center;
+  }
 
+.weather-name {
+    text-align: center;
+    font-weight: bold;
+    font-stretch: expanded;
+    
 }
-.weather-result {
-    list-style: none;
-    padding: 0;
-}
+  
 
 .weather-result li {
-    font-size: 15px;
-    margin-bottom: 10px;
+    font-size: 25px;
+    margin-bottom: 5px;
     margin-top: 10px;
 }
 
@@ -128,5 +143,12 @@
     cursor: pointer;
   }
 
+  @media only screen and (max-width: 600px) {
+  }
   
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+  }
+  
+  @media only screen and (min-width: 1025px) {
+  }
   
