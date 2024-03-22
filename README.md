@@ -13,7 +13,7 @@ The Pokémon Weather App is a web application that utilizes both the Pokémon AP
 ## APIs Used
 
 - [Pokémon API](https://pokeapi.co/): Used to retrieve Pokémon information.
-- [Weather API](https://openweathermap.org/api): Used to retrieve weahter information.
+- [Weather API](https://openweathermap.org/api): Used to retrieve weather information.
 
 ## Installation
 
