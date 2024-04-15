@@ -17,6 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 
 const db = pgp(dbUrl); //coming from the .env file
 
+app.get('/heartbeat', (req, res) => {
+    res.send('hello')
+});
+
 
 app.post('/register', async (req, res) => {
     try {
