@@ -13,7 +13,8 @@ async function weatherFunction() {
     function convertKelvin(kelvin) {
       return Math.floor(kelvin - 273.15) * 9/5 + 32;
     }
-    
+
+
     weatherResult.innerHTML = `
       <li class='weather-name'>${data.name}</li>
       <div class="result-container">

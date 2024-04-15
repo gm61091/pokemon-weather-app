@@ -28,7 +28,7 @@
 
         <br>
         <div class="container">
-            <form action="https://login-page-server.vercel.app/login" method="post" class="mb-3"> <!-- Added method="post" -->
+            <form onsubmit="handleSubmit(event)", class = "mb-3" > <!-- Added method="post" -->
                 <div>
                   <label for="exampleInputEmail1" class="form-label">Email address</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp"> <!-- Added name="email" -->
@@ -41,6 +41,38 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
+
+        <script>
+            const handleSubmit = async (e) => {
+       e.preventDefault();
+    
+       const form = e.target;
+       const userData = {email: form.email.value, password: form.password.value};        
+       try {
+    
+         const response = await fetch(
+           "https://login-page-server.vercel.app/login",
+           {
+             method: "POST",
+             headers: {
+               "Content-Type": "application/json",
+             },
+             body: JSON.stringify(userData),
+           }
+         );
+         const data = await response.json();
+         if(response.ok) {
+           window.location.href = 'https://pokemon-weather-app.vercel.app/home.html';
+         }
+         else{
+           console.log('didnt work')
+         };
+         
+       } catch (error) {
+         console.error("Error:", error);
+       }
+     };
+       </script>
     
     
     
