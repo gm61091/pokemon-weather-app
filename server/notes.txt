@@ -1,0 +1,147 @@
+// weclome for page $$
+// description of what it does $$
+// a couple of permanent images for landing page
+// search bar $$
+// result box for weather results
+// potential pokemon list based off weather result.
+// may add a database they can click and keep pokemon like the game 
+
+// pulling from pokemon types function -
+//id
+//type
+//name
+
+//pulling from pokemon image function -
+//default_sprite
+
+//pokeomn type [
+    //water
+    //electric
+    //posion
+    //dark
+    //ghost
+    //normal
+    //bug
+    //fire
+    //psychic
+    //fighting
+    //ground
+    //rock
+    //gragon
+    //grass
+    //steel
+    //flying
+    //fairy
+    //ice
+//]
+
+//function for time
+// if day ? bug && ground
+// if night ? ghost && psychic
+
+// function for tempuratre
+//if temp < 30 ? ice && fairy
+//if temp > 30 && < 60 ? ground && rock pokemon
+//if temp > 60 && < 90 ? bug && grass pokemon
+//if temp > 90 ? fire && Dragon pokemon
+
+//function for weather.main
+//if weather = clouds ? water && ghost
+//if weather = dust ? ground && ghost
+//if weather = sand ? ground && ghost
+//if weather = Ash ? fire && ghost
+//if weather = Squall ? water && ghost
+//if weather = Tordnado ? water && ghost
+//if weather = haze ? ghost && dragon
+//if weather = fog ? ghost && psychic
+//if weather = smoke ? fire && poison
+//if weather = mist ? water && ghost
+//if weather = snow ? ice && fairy
+//if weather = rain ? water && grass 
+//if weather = drizzle ? water && grass
+//if weather = thunderstorm ? water && electric 
+//if weather = clear ? fire && normal
+
+//fucntion for clouds
+//if clouds > 0 && < 25 ? grass and flying pokemon
+//if clouds > 25 && < 50 ? ground && bug
+//if clouds > 50 && < 84 ? rock && electric
+//if clouds > 84 && < 100 ? ghost && water
+
+//function for humidity
+//if humidtiy > 0 && < 25 ? rock && fire
+//if humidity > 25 && < 50 ? ground && steel
+//if humidity > 50 && < 75 ? grass && bug
+//if humidity > 75 && < 100 ? water && grass
+
+//function for wind
+//if wind > 0 && < 5 ? ground && bug
+//if wind > 5 && < 10 ? grass && rock
+//if wind > 10 && < 15 ? rock && flying
+//if wind > 15 ? flying && dragon
+
+
+Get the Images -- I want you to just show me how you would drill down to the image from this call:
+let pokemonDataUrl = await pokemonData.pokemon[0].pokemon.url 
+
+So once you open the link from that point, show me how you would get the images. for example,
+ if it was in main > images[0] > img_url, I want you to write pokemonDataUrl.main.images[0].img_url
+
+
+pokemonDataUrl.sprites.other.official-artwork.front_default
+
+pokemonDataUrl.sprites.other.showdown.front_default
+
+welcome header with a few pokemon images
+description of what site does
+a search bar with please enter city
+3 result boxes 
+1 for the city name of results
+1 for the weather results
+1 for potential pokemon
+
+pokemon will show image name and id
+
+
+
+//pokemon image api call
+
+// async function pokemonImage() {
+
+//     const pokemon = document.getElementById('pokemon');
+//     const pokemon2= document.getElementById('pokemon2');
+//     const pokemonValue = pokemon.value;
+//     const imageUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonValue}`;
+//     let pokemonResult = document.createElement('ul');
+
+//     fetch(imageUrl)
+//     .then(response => response.json())
+//     .then(data => {
+
+
+//         console.log(data)
+
+        
+//         pokemonResult.innerHTML = `
+//         <li>Pokemon: ${data.name}</li>
+//         <li>ID: ${data.id}</li>
+//         <li>Type: ${data.types[0].type.name}</li>
+//         `;
+//         let imgElement = document.getElementById('pokemonSprite')
+//         imgElement.setAttribute('src', data.sprites.front_default)
+//         pokemon2.appendChild(pokemonResult)
+//     })
+//     .catch(error => console.error('Error:', error))};
+
+
+
+
+
+
+
+// const pokemonName = document.createElement('p');
+// pokemonName.innerText = pokemonData.name;
+// pokemonName.classList.add('pokemon-name');
+// pokemonContainer.appendChild(pokemonName);
+
+     //const spriteUrl = pokemonData.sprites.other['official-artwork'].front_default;
