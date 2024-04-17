@@ -32,7 +32,7 @@
   }
   .header {
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     background-color: #78eef0;
     border: 1px solid #e6e3e3;
     border-radius: 10px;
@@ -51,12 +51,11 @@
     font-weight: bold;
 }
 
-.container {
-    text-align: center;
-}
+
 .container {
   text-align: center;
-  padding: 20px;
+  align-items: center;
+  padding: 10px;
 }
 
 .container2 {
@@ -110,11 +109,21 @@
 
 
 
-.container input {
-    margin: 5px;
+
+
+.center-container {
+ 
+  justify-content: center;
+  align-items: center;
 }
+
+
 .container button {
-    margin: 5px;
+  display: inline-block;
+  width: auto;
+  padding: 3px 10px; /* Adjust as needed for button padding */
+  font-size: inherit; /* Inherit font size from parent */
+  margin-left: 10px;
 }
 
 .weather-result {
@@ -153,7 +162,7 @@
 .weather-result li {
     font-size: 25px;
     margin-bottom: 5px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .label {
@@ -165,31 +174,31 @@
 
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 9999; 
-    left: 0;
-    top: 0;
-    width: 20%; 
-    height: 20%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-  }
-  
-
+  display: none; 
+  position: fixed; 
+  z-index: 9999; 
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
 
 .modal-content {
-    background-color: #fefefe;
-    margin: auto; 
-    margin-top: 20%; 
-    padding: 10px;
-    border: 1px solid #888;
-    max-width: 100px; 
-    text-align: center;
-    
-  }
-  
+  background-color: #fefefe;
+  margin: auto;
+  margin-top: 20vh;
+  padding: 10px;
+  border: 1px solid #888;
+  max-width: 80%; /* Set maximum width */
+  width: 300px; /* Adjust width as needed */
+  max-height: 80%; /* Set maximum height */
+  height: auto; /* Allow the content to dictate the height */
+  text-align: center;
+}
+
+
   
   .close {
     color: #aaa;
