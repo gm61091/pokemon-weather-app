@@ -21,26 +21,24 @@
         <img id="rightImage2">
     </div>
     <br>
-
-
-
-    <h5 class="h5">Login</H5>
-
+    <br>
+    <br>
+    <br>
+    <div class="container">
+      <div class="container2">
+        <h2 class="h5">Login</h2>
         <br>
-        <div class="container">
-            <form onsubmit="handleSubmit(event)", class = "mb-3" > <!-- Added method="post" -->
-                <div>
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp"> <!-- Added name="email" -->
-                  <div id="emailHelp" class="form-text"></div>
-        
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" name="password"> <!-- Added name="password" -->
-                </div>
-        
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
+        <form onsubmit="handleSubmit(event)" class="mb-3">
+            <div>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="email">
+                <br>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="password">
+            </div>
+                <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
 
         <script>
             const handleSubmit = async (e) => {

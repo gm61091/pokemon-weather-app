@@ -22,35 +22,38 @@
     </div>
     <br>
 
-    <h5 class="h5">Register for the Pokemon Weather App</H5>
+    <h2 class="h5">Register for the Pokemon Weather App</H2>
 
-    <br>
-    <div class="container">
-        <form onsubmit="handleSubmit(event)" class="row g-3">
-            <div class="col-12">
-                <label for="inputName4" class="form-label"></label> 
-                <input type="text" class="form-control" name="name" placeholder="Name" aria-label="First name">
+      <div class="container">
+        <div class="container2">
+            <form onsubmit="handleSubmit(event)" class="row g-3">
+                <div class="col-12">
+
+                    <input type="text" class="form-control" name="name" placeholder="Name" aria-label="First name">
+                    <br>
+                    <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email">
+                    <br>
+                    <input type="password" class="form-control" name="password" id="inputPassword4" placeholder="Password">
+                </div>
+               
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+
+                <br>
+                <br>
+                <h2 class="h5">Already have an account?</h2>
+                <br>
+                <br>
+                <div >
+                    <button class="btn btn-primary" onclick="window.location.href = 'https://pokemon-weather-app.vercel.app/login.html';">Login</button>
+                </div>
+
                 
-                <label for="inputEmail4" class="form-label"></label>
-                <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email">
-                
-                <label for="inputPassword4" class="form-label"></label>
-                <input type="password" class="form-control" name="password" id="inputPassword4" placeholder="Password">
-            </div>
-           
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Register</button>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h5 class="h5">Already have an account?</H5>
-            <div class="col-12">
-              <button class="btn btn-primary" onclick="window.location.href = 'https://pokemon-weather-app.vercel.app/login.html';">Login</button>
-            </div>
-        </form>
+            </form>
+
     </div>
+    
 
 
 

@@ -10,7 +10,15 @@
     gap: 35px; 
   }
 
-
+  .container2 {
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Ensure the container takes only the necessary width */
+    text-align: left; /* Left align the content within the container */
+}
 
 
   
@@ -45,6 +53,58 @@
 
 .container {
     text-align: center;
+}
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.container2 {
+  display: inline-block;
+  text-align: left;
+}
+
+/* Form control styles */
+.form-label {
+  font-size: 18px;
+}
+
+.form-control {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+/* Button styles */
+.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Heading styles */
+.h1 {
+  font-size: 24px;
+}
+
+.h5 {
+  font-size: 24px;
 }
 
 
