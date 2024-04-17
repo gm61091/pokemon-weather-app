@@ -29,7 +29,6 @@
         <div class="container2">
             <form onsubmit="handleSubmit(event)" class="row g-3">
                 <div class="col-12">
-
                     <input type="text" class="form-control" name="name" placeholder="Name" aria-label="First name">
                     <br>
                     <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email">
@@ -37,22 +36,21 @@
                     <input type="password" class="form-control" name="password" id="inputPassword4" placeholder="Password">
                 </div>
                
-                <div class="col-12">
+                <div class="col-12 button-container"> <!-- Added button-container class -->
                     <button type="submit" class="btn btn-primary">Register</button>
                 </div>
-
-                <br>
-                <br>
-                <h2 class="h5">Already have an account?</h2>
-                <br>
-                <br>
-                <div >
-                    <button class="btn btn-primary" onclick="window.location.href = 'https://pokemon-weather-app.vercel.app/login.html';">Login</button>
-                </div>
-
-                
             </form>
-
+            <br>
+    
+            <div class="col-12 button-container">
+              <div class="login-container">
+                  <h2 class="h5">Already have an account?</h2>
+                  <br>
+                  <button class="btn btn-primary" onclick="window.location.href = 'https://pokemon-weather-app.vercel.app/login.html';">Login</button>
+              </div>
+          </div>
+          
+        </div>
     </div>
     
 

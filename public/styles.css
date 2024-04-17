@@ -157,7 +157,25 @@
     font-stretch: expanded;
     
 }
-  
+.button-container {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+}
+
+.button-container .btn {
+  margin: 0 5px; /* Add margin around the buttons if needed */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center items vertically */
+}
+
+.login-container {
+  text-align: center; /* Center text horizontally */
+}
+
 
 .weather-result li {
     font-size: 25px;

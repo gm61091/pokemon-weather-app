@@ -27,19 +27,22 @@
     <br>
     <div class="container">
       <div class="container2">
-        <h2 class="h5">Login</h2>
-        <br>
-        <form onsubmit="handleSubmit(event)" class="mb-3">
-            <div>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="email">
-                <br>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="password">
-            </div>
-                <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+          <h2 class="h5">Login</h2>
+          <br>
+          <form onsubmit="handleSubmit(event)" class="mb-3">
+              <div>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="email">
+                  <br>
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="password">
+              </div>
+              <br>
+              <div class="button-container"> <!-- Added button-container class -->
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </form>
       </div>
-    </div>
+  </div>
+  
 
         <script>
             const handleSubmit = async (e) => {
