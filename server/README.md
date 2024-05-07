@@ -13,3 +13,5 @@ Installation
 Clone the repository: git clone https://github.com/gm61091/pokemon-weather-app.git
 Navigate to the project directory: cd pokemon-weather-app
 Install dependencies: npm install or yarn install
+
+
